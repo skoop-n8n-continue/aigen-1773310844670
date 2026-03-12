@@ -1,0 +1,127 @@
+:root {
+  --bg-color: #f2f5f0;
+  --header-bg: #fffffe;
+  --title-color: #5b975a;
+  --text-color: #000000;
+  --price-color: #18570f;
+  --brand-color: #666666;
+  --stripe-bg: rgba(91, 151, 90, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-header {
+  background-color: var(--header-bg);
+  padding: 3vh 5vw;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.menu-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 5vw, 6rem);
+  color: var(--title-color);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: row;
+  padding: 4vh 5vw;
+  gap: 6vw;
+  height: 100%;
+  overflow: hidden; /* JavaScript will handle scrolling if necessary */
+}
+
+.menu-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+
+.category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 4rem);
+  color: var(--title-color);
+  border-bottom: 3px solid var(--title-color);
+  padding-bottom: 1vh;
+  margin-bottom: 2vh;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5vh 3vw;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease;
+}
+
+.menu-item.striped {
+  background-color: var(--stripe-bg);
+  box-shadow: none;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+  max-width: 75%;
+}
+
+.item-name {
+  font-size: clamp(1.2rem, 2vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+.weight {
+  font-weight: 400;
+  font-size: 0.8em;
+  color: var(--brand-color);
+}
+
+.item-brand {
+  font-size: clamp(1rem, 1.5vw, 1.8rem);
+  color: var(--brand-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.item-price {
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  font-weight: 700;
+  color: var(--price-color);
+}
